@@ -18,7 +18,7 @@ RUN apk add --update --no-cache \
       libmagic
 
 RUN pip install \
-      apache-airflow>=1.8.1 \
+      apache-airflow==1.8.1 \
       pydicom>=0.9.9 \
       SQLAlchemy>=1.1.6 \
       python-magic>=0.4.12 \
