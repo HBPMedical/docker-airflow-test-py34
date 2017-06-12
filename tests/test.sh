@@ -17,20 +17,12 @@ get_script_dir () {
 cd "$(get_script_dir)"
 
 if groups $USER | grep &>/dev/null '\bdocker\b'; then
-  DOCKER_COMPOSE="docker-compose"
+  DOCKER="docker"
 else
-  DOCKER_COMPOSE="sudo docker-compose"
+  DOCKER="sudo docker"
 fi
-
-$DOCKER_COMPOSE up -d test_db
-$DOCKER_COMPOSE run wait_dbs
-$DOCKER_COMPOSE run db_setup
 
 echo
 echo "Test airflow-test-py34"
-$DOCKER_COMPOSE run db_check
-
-# Cleanup
-echo
-$DOCKER_COMPOSE stop
-$DOCKER_COMPOSE rm -f > /dev/null 2> /dev/null
+$DOCKER run -i -t --rm --entrypoint "/usr/local/bin/airflow" hbpmip/airflow-test-py34:latest version
+$DOCKER run -i -t --rm --entrypoint "/usr/local/bin/nosetests" hbpmip/airflow-test-py34:latest --help

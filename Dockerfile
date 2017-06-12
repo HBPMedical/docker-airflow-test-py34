@@ -23,7 +23,8 @@ RUN pip install \
       SQLAlchemy>=1.1.6 \
       python-magic>=0.4.12 \
       nibabel>=2.1.0 \
-      psycopg2>=2.7.1
+      psycopg2>=2.7.1 \
+      nose==1.3.7
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="hbpmip/airflow-test-py34" \
