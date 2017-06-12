@@ -42,7 +42,7 @@ code_repositories:
 
 code_quality_checks:
   codacy:
-    badge: https://api.codacy.com/project/badge/Grade/TODO
+    badge: https://api.codacy.com/project/badge/Grade/e558dd428eda47c4a0ef76235841416d
     url: "https://www.codacy.com/app/hbp-mip/docker-airflow-test-py34?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LREN-CHUV/docker-airflow-test-py34&amp;utm_campaign=Badge_Grade"
 
 testing:
