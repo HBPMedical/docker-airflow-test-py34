@@ -54,7 +54,7 @@ RUN pip install docker-compose
 ### Code copied from docker-compose-for-ci/Dockerfile
 
 RUN apk add --update --no-cache bash build-base git py-pip python python-dev curl \
-    && pip install pre-commit==1.3.0 \
+    && pip install pre-commit==1.15.1 \
     && curl -sSL https://raw.githubusercontent.com/harbur/captain/v1.1.0/install.sh | bash \
     && rm -rf /var/cache/apk/* /tmp/*
 
